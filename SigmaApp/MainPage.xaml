@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaApp.MainPage">
+    <ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="#03A64A" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,10,0,10" VerticalOptions="FillAndExpand">
+                    <Image Source="LogoSigma.png" VerticalOptions="Center" HeightRequest="130"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+            <Label Text="Sigma Automação Industrial" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Label Text="Nossos Serviços:" FontSize="Medium" Margin="0,20,0,10" FontAttributes="Bold"/>
+            <Label Text="Projetos elétricos"/>
+            <Label Text="Automação industrial"/>
+            <Label Text="Adequações NR-10 e NR-12"/>
+            <Label Text="Montagem de painéis elétricos"/>
+            <Label Text="Instalações elétricas industriais"/>
+            <Label Text="Venda e Instalação de sistema fotovoltaico"/>
+
+            <Button x:Name="btnTabelas"
+                    Margin="0,20,0,0" 
+                    Text="Tabelas"
+                    Clicked="btnTabelas_Clicked"
+                    BackgroundColor="#03A64A"
+                    TextColor="White" />
+
+            <Label Text="Contato:" FontAttributes="Bold" Margin="0,20,0,0"/>
+            <Label Text="(49) 3328-8683"/>
+            <Label Text="sigma@sigmacco.com.br"/>
+            <Label Text="Rua José de Alencar, 475 - Chapecó - SC"/>
+
+        </StackLayout>
+    </Grid>
+    </ScrollView>
+
+</ContentPage>
