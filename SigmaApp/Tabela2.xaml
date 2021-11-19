@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <Grid Padding="20">
             <StackLayout>
-                <Label Text="NBR ISO 13855" VerticalOptions="Center" HorizontalOptions="Center" Margin="20" FontSize="Medium"/>
+                <Label Text="NBR ISO 13857" VerticalOptions="Center" HorizontalOptions="Center" Margin="20" FontSize="Medium"/>
                 <local:PinchPanContainer>
                     <local:PinchPanContainer.Content>
                         <Image Source="Tab4"/>
