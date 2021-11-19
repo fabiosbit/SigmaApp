@@ -20,11 +20,8 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.ColumnSpan="3" Text="NBR ISO 13857 &#10; Estrutura de Proteção" HorizontalTextAlignment="Center" Margin="10" FontSize="Medium"/>
-            <local:PinchPanContainer Grid.Row="1" Grid.ColumnSpan="3">
-                <local:PinchPanContainer.Content>
-                    <Image Source="Corpo"/>
-                </local:PinchPanContainer.Content>
-            </local:PinchPanContainer>
+            <Image Source="Corpo" Grid.Row="1" Grid.ColumnSpan="3"/>
+
 
             <StackLayout Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="10" HorizontalOptions="Center">
                 <RadioButton x:Name="riscoAlto" IsChecked="True" Content="Risco Alto" FontSize="Small"/>
