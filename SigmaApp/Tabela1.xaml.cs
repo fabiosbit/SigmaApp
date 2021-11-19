@@ -14,19 +14,7 @@ namespace SigmaApp
     {
         public Tabela1()
         {
-            Content = new Grid 
-            { 
-                Padding = new Thickness(20), Children = 
-                { 
-                    new PinchPanContainer
-                    {
-                        Content = new Image 
-                        {
-                           Source = ImageSource.FromFile ("Tabela1")
-                        }
-                    }
-                }
-            };
+            InitializeComponent();
         }
 
     }

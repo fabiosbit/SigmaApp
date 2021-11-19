@@ -2,21 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaApp.Tabela1"
-             xmlns:local="clr-namespace:SigmaApp" >
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="TABELA 1"
-                VerticalOptions="Center" 
-                     HorizontalOptions="Center"
-                   Margin="20"/>
+             xmlns:local="clr-namespace:SigmaApp">
 
-            <Grid Padding="20">
-                <local:PinchPanContainer Padding="20">
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <StackLayout>
+                <Label Text="NBR ISO 13857" VerticalOptions="Start" HorizontalOptions="Center" Margin="20" FontSize="Medium"/>
+                <local:PinchPanContainer>
                     <local:PinchPanContainer.Content>
-                        <Image Source="Tabela1"/>
+                        <Image Source="Tab3"/>
                     </local:PinchPanContainer.Content>
                 </local:PinchPanContainer>
-            </Grid>
-        </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
