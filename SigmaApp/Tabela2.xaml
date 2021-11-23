@@ -4,16 +4,17 @@
              x:Class="SigmaApp.Tabela2"
              xmlns:local="clr-namespace:SigmaApp">
 
-    <ContentPage.Content>
-        <Grid Padding="20">
-            <StackLayout>
-                <Label Text="NBR ISO 13857" VerticalOptions="Center" HorizontalOptions="Center" Margin="20" FontSize="Medium"/>
-                <local:PinchPanContainer>
-                    <local:PinchPanContainer.Content>
-                        <Image Source="Tab4"/>
-                    </local:PinchPanContainer.Content>
-                </local:PinchPanContainer>
-            </StackLayout>
-        </Grid>
-    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="NBR ISO 13857 - Tabela 4" TextColor="#03A64A" VerticalTextAlignment="Center"/>
+            <Image Source="icoSigma" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+        <local:PinchPanContainer >
+            <local:PinchPanContainer.Content>
+                <Image Source="Tab4" VerticalOptions="Start" HeightRequest="400" Margin="10,0,10,0"/>
+            </local:PinchPanContainer.Content>
+        </local:PinchPanContainer>
+
 </ContentPage>

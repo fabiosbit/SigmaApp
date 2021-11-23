@@ -9,17 +9,6 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!--<Frame>
-                <Frame.Background>
-                    <LinearGradientBrush EndPoint="1,1">
-                        <GradientStop Color="#03A64A"
-                          Offset="0.1" />
-                        <GradientStop Color="White"
-                          Offset="1.0" />
-                    </LinearGradientBrush>
-                </Frame.Background>
-            </Frame>-->
-
             <StackLayout Orientation="Horizontal" Margin="20,20,20,0">
                 <Label Text="Sigma Automação Industrial" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                 <Image Source="LogoSigma.png" HeightRequest="130"/>

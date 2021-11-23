@@ -2,32 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaApp.TabelasPage">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Tabelas" TextColor="#03A64A"/>
+    </NavigationPage.TitleView>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <ContentPage.Content>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="180"/>
-                <RowDefinition Height="180"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <StackLayout Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20,0,20,20">
+            <Label Text="Sigma Automação Industrial" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Image Source="LogoSigma.png" HeightRequest="130"/>
+        </StackLayout>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Button x:Name="btnTab1" Text="NBR ISO 13857 Tabela 3" Grid.Row="1" Margin="20" HeightRequest="120" Clicked="btnTab1_Clicked"/>
+        <Button x:Name="btnTab2" Text="NBR ISO 13857 Tabela 4" Grid.Row="1" Grid.Column="1" Margin="20" Clicked="btnTab2_Clicked"/>
+        <Button x:Name="btnTab3" Text="Calculadora Barreira de proteção" Grid.Row="2" Margin="20" Clicked="btnTab3_Clicked"/>
+        <Button x:Name="btnTab4" Text="Calculadora Cortina de luz" Grid.Row="2" Grid.Column="1" Margin="20" Clicked="btnTab4_Clicked"/>
+    </Grid>
 
-            <StackLayout Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20,20,20,20">
-                <Label Text="Sigma Automação Industrial" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                <Image Source="LogoSigma.png" HeightRequest="130"/>
-            </StackLayout>
-
-            <Button x:Name="btnTab1" Text="NBR ISO 13857 Tabela 3" Grid.Row="1" Margin="20" HeightRequest="120" CornerRadius="20" Clicked="btnTab1_Clicked" BackgroundColor="#03A64A" TextColor="White"/>
-            <Button x:Name="btnTab2" Text="NBR ISO 13857 Tabela 4" Grid.Row="1" Grid.Column="1" Margin="20" CornerRadius="20" Clicked="btnTab2_Clicked" BackgroundColor="#03A64A" TextColor="White"/>
-            <Button x:Name="btnTab3" Text="Calculadora Barreira de proteção" Grid.Row="2" Margin="20" CornerRadius="20" Clicked="btnTab3_Clicked" BackgroundColor="#03A64A" TextColor="White"/>
-            <Button x:Name="btnTab4" Text="Calculadora Cortina de luz" Grid.Row="2" Grid.Column="1" Margin="20" CornerRadius="20" Clicked="btnTab4_Clicked" BackgroundColor="#03A64A" TextColor="White"/>
-        </Grid>
-
-    </ContentPage.Content>
 </ContentPage>

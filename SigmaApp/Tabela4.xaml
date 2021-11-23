@@ -4,36 +4,42 @@
              x:Class="SigmaApp.Tabela4"
              xmlns:local="clr-namespace:SigmaApp">
 
-    <ContentPage.Content>
-        <Grid Padding="20" HorizontalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="250"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ISO 13855 Detecção de Aproximação" TextColor="#03A64A" VerticalTextAlignment="Center"/>
+            <Image Source="icoSigma" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <Grid HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
-            <Label Grid.ColumnSpan="3" Text="NBR ISO 13855 &#10; Detecção de Aproximação" HorizontalTextAlignment="Center" Margin="10" FontSize="Medium"/>
-            <Image Source="Tab13855" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <!--<Label Grid.ColumnSpan="3" Text="NBR ISO 13855 &#10; Detecção de Aproximação" HorizontalTextAlignment="Center" Margin="10" FontSize="Medium"/>-->
+        <Image Source="Tab13855" Grid.Row="1" Grid.ColumnSpan="3"/>
 
-            <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
-                <Label Text="Tempo de parada em segundos ''T'':" VerticalOptions="Center" FontSize="15"/>
-                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s"/>
-            </StackLayout>
-            <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
-                <Label Text="Resolução da cortina de luz em mm ''D'':" VerticalOptions="Center" FontSize="15"/>
-                <Entry Keyboard="Numeric" x:Name="entryResol" MaxLength="5" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
-            </StackLayout>
+        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+            <Label Text="Tempo de parada em segundos ''T'':" VerticalOptions="Center" FontSize="15"/>
+            <Entry Keyboard="Telephone" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s"/>
+        </StackLayout>
+        <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+            <Label Text="Resolução da cortina de luz em mm ''D'':" VerticalOptions="Center" FontSize="15"/>
+            <Entry Keyboard="Numeric" x:Name="entryResol" MaxLength="5" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
+        </StackLayout>
 
-            <Label x:Name="labelResultado"/>
-            <Button Grid.Row="4" Grid.Column="0" x:Name="btnCalcularDist" Margin="0,20,0,0" Text="Calcular" Clicked="btnCalcularDist_Clicked"/>
+        <Label x:Name="labelResultado"/>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" WidthRequest="200" x:Name="btnCalcularDist" Margin="0,10,0,0" Text="Calcular" Clicked="btnCalcularDist_Clicked"/>
 
-        </Grid>
-    </ContentPage.Content>
+    </Grid>
+
 </ContentPage>

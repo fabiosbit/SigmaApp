@@ -2,10 +2,25 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaApp.App">
+
     <Application.Resources>
         <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#03A64A"/>
-            <Setter Property="BarTextColor" Value="White" />
+            <Setter Property="BarBackgroundColor" Value="white"/>
+            <Setter Property="BarTextColor" Value="#03A64A"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#03A64A"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="20"/>
         </Style>
     </Application.Resources>
 </Application>
+
+<!--<Frame>
+    <Frame.Background>
+        <LinearGradientBrush EndPoint="1,1">
+            <GradientStop Color="#03A64A" Offset="0.1"/>
+            <GradientStop Color="White" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Frame.Background>
+</Frame>-->
