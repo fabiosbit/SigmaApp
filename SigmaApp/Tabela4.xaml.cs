@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Android.Views;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -51,9 +48,7 @@ namespace SigmaApp
                         s = (1600 * t) + c;
                     }
 
-
-
-                    DisplayAlert("Resultado", "S = " + Convert.ToString(s) + " mm", "ok");
+                    DisplayAlert("Resultado", "S = " + s + " mm", "ok");
                 }
 
             }
@@ -71,6 +66,16 @@ namespace SigmaApp
                 bool numeroOk = args.NewTextValue.ToCharArray().All(x => char.IsDigit(x));
 
                 ((Entry)sender).Text = numeroOk ? args.NewTextValue : args.NewTextValue.Remove(args.NewTextValue.Length - 1);
+            }
+        }
+
+        private void entryTempo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            entryTempo.Text = e.NewTextValue?.Replace('.', ',');
+
+            if (entryTempo.CursorPosition == 0 && e.NewTextValue != ",")
+            {
+                entryTempo.Text = e.NewTextValue + ",";
             }
         }
     }

@@ -5,16 +5,17 @@
 
     <Application.Resources>
         <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="white"/>
-            <Setter Property="BarTextColor" Value="#03A64A"/>
+            <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light=White, Dark=#303030}"/>
+            <Setter Property="BarTextColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#03A64A"/>
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=White}"/>
             <Setter Property="CornerRadius" Value="20"/>
         </Style>
     </Application.Resources>
 </Application>
+
 
 <!--<Frame>
     <Frame.Background>

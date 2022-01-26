@@ -6,7 +6,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="NBR ISO 13857 - Tabela 3" TextColor="#03A64A" VerticalTextAlignment="Center"/>
+            <Label Text="NBR ISO 13857 - Tabela 3" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" VerticalTextAlignment="Center"/>
             <Image Source="icoSigma" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
         </StackLayout>
     </NavigationPage.TitleView>

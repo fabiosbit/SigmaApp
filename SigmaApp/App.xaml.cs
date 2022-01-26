@@ -9,6 +9,11 @@ namespace SigmaApp
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
+
+            Current.RequestedThemeChanged += (s, a) =>
+            {
+                Environment.Exit(0);
+            };
         }
 
         protected override void OnStart()

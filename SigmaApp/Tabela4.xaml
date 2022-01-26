@@ -6,7 +6,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="ISO 13855 Detecção de Aproximação" TextColor="#03A64A" VerticalTextAlignment="Center"/>
+            <Label Text="ISO 13855 Detecção de Aproximação" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" VerticalTextAlignment="Center"/>
             <Image Source="icoSigma" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
         </StackLayout>
     </NavigationPage.TitleView>
@@ -30,7 +30,7 @@
 
         <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
             <Label Text="Tempo de parada em segundos ''T'':" VerticalOptions="Center" FontSize="15"/>
-            <Entry Keyboard="Telephone" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s"/>
+            <Entry Keyboard="Numeric" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s" TextChanged="entryTempo_TextChanged"/>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
             <Label Text="Resolução da cortina de luz em mm ''D'':" VerticalOptions="Center" FontSize="15"/>

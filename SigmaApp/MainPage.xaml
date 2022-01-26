@@ -2,40 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaApp.MainPage">
+    
+    <!--NavigationPage.HasNavigationBar="false">-->
+
+    <!--<NavigationPage.TitleView>
+        <Label Text="SigmaApp" TextColor="#03A64A"/>
+    </NavigationPage.TitleView>-->
+
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal" Margin="20,20,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20,0,20,20">
                 <Label Text="Sigma Automação Industrial" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                 <Image Source="LogoSigma.png" HeightRequest="130"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="1" Orientation="Vertical" Padding="30,0,30,24" Spacing="10">
-                <Label Text="Nossos Serviços:" FontSize="Medium" Margin="0,20,0,10" FontAttributes="Bold"/>
-                <Label Text="Projetos elétricos"/>
-                <Label Text="Automação industrial"/>
-                <Label Text="Adequações NR-10 e NR-12"/>
-                <Label Text="Montagem de painéis elétricos"/>
-                <Label Text="Instalações elétricas industriais"/>
+            <Button x:Name="btnTab1" Text="NBR ISO 13857 Tabela 3" Grid.Row="1" Margin="20,20,10,10" Clicked="btnTab1_Clicked"/>
+            <Button x:Name="btnTab2" Text="NBR ISO 13857 Tabela 4" Grid.Row="1" Grid.Column="1" Margin="10,20,20,10" Clicked="btnTab2_Clicked"/>
+            <Button x:Name="btnTab3" Text="Calculadora Barreira de proteção" Grid.Row="2" Margin="20,20,10,10" Clicked="btnTab3_Clicked"/>
+            <Button x:Name="btnTab4" Text="Calculadora Cortina de luz" Grid.Row="2" Grid.Column="1" Margin="10,20,20,10" Clicked="btnTab4_Clicked"/>
+            <Button x:Name="btnSObre" Text="Sobre a Sigma" Grid.Row="3" Grid.ColumnSpan="2" Margin="110,30,110,30" Clicked="btnSobre_Clicked"/>
 
-                <Button x:Name="btnTabelas"
-                    Margin="0,20,0,0" 
-                    Text="Tabelas"
-                    Clicked="btnTabelas_Clicked"
-                    BackgroundColor="#03A64A"
-                    TextColor="White" />
-
-                <Label Text="Contato:" FontAttributes="Bold" Margin="0,20,0,0"/>
-                <Label Text="(49) 3328-8683"/>
-                <Label Text="sigma@sigmacco.com.br"/>
-                <Label Text="Rua José de Alencar, 475 - Chapecó - SC"/>
-
-            </StackLayout>
         </Grid>
     </ScrollView>
-
 </ContentPage>
