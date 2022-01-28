@@ -786,28 +786,33 @@ namespace SigmaApp
                         {
                             if (hps < 1000)
                             {
-                                DisplayAlert("Aviso", "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo", "ok");
+                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelTextoResultado.IsVisible = true;
                             }
                             else
                             {
-                                DisplayAlert("Resultado Sh(c) Risco Baixo", Convert.ToString(tabelaRiscoBaixoSh[a, b]), "ok");
+                                labelResultado.Text = "Sh(c) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoSh[a, b]) + "mm";
+                                labelTextoResultado.IsVisible = true;
                             }
                         }
 
                         if (hps == -1)
                         {
-                            DisplayAlert("Resultado Hps(b) Risco Baixo", Convert.ToString(tabelaRiscoBaixoHps[a, c]), "ok");
+                            labelResultado.Text = "Hps(b) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
+                            labelTextoResultado.IsVisible = true;
                         }
 
                         if (hh == -1)
                         {
                             if (hps < 1000)
                             {
-                                DisplayAlert("Aviso", "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo", "ok");
+                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelTextoResultado.IsVisible = true;
                             }
                             else
                             {
-                                DisplayAlert("Resultado Hh(a) Risco Baixo", Convert.ToString(tabelaRiscoBaixoHh[b, c]), "ok");
+                                labelResultado.Text = "Hh(a) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
+                                labelTextoResultado.IsVisible = true;
                             }
                         }
                     }
@@ -1262,7 +1267,7 @@ namespace SigmaApp
                     tabelaRiscoAltoSh[2, 9] = 0;
                     tabelaRiscoAltoSh[3, 0] = 1300;
                     tabelaRiscoAltoSh[3, 1] = 1200;
-                    tabelaRiscoAltoSh[3, 2] = 1100;
+                    tabelaRiscoAltoSh[3, 2] = 1000;
                     tabelaRiscoAltoSh[3, 3] = 900;
                     tabelaRiscoAltoSh[3, 4] = 800;
                     tabelaRiscoAltoSh[3, 5] = 600;
@@ -1549,31 +1554,36 @@ namespace SigmaApp
                         {
                             if (hps < 1000)
                             {
-                                DisplayAlert("Aviso", "Estruturas de proteção (hps) menores que 1000mm não restringem suficientemente o movimento do corpo", "ok");
+                                labelResultado.Text = "Estruturas de proteção (hps) menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelTextoResultado.IsVisible = true;
                             }
                             else
                             {
-                                DisplayAlert("Resultado Sh(c) Risco Alto", Convert.ToString(tabelaRiscoAltoSh[a, b]) +
+                                labelResultado.Text = "Sh(c) Risco Alto = " + Convert.ToString(tabelaRiscoAltoSh[a, b]) +
                                     Environment.NewLine +
                                     Environment.NewLine +
-                                    "* Não convém que as estruturas de proteção menores que 1400mm sejam aplicadas sem medidas de proteção adicionais.", "ok");
+                                    "* Não convém que as estruturas de proteção menores que 1400mm sejam aplicadas sem medidas de proteção adicionais.";
+                                labelTextoResultado.IsVisible = true;
                             }
                         }
 
                         if (hps == -1)
                         {
-                            DisplayAlert("Resultado Hps(b) Risco Alto", tabelaRiscoAltoHps[a, c], "ok");
+                            labelResultado.Text = "Hps(b) Risco Alto = " + tabelaRiscoAltoHps[a, c] + "mm";
+                            labelTextoResultado.IsVisible = true;
                         }
 
                         if (hh == -1)
                         {
                             if (hps < 1000)
                             {
-                                DisplayAlert("Aviso", "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo", "ok");
+                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelTextoResultado.IsVisible = true;
                             }
                             else
                             {
-                                DisplayAlert("Resultado Hh(a) Risco Alto", tabelaRiscoAltoHh[b, c], "ok");
+                                labelResultado.Text = "Hh(a) Risco Alto = " + tabelaRiscoAltoHh[b, c] + "mm";
+                                labelTextoResultado.IsVisible = true;
                             }
                         }
                     }

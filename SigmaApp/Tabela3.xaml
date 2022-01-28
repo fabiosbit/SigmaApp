@@ -14,42 +14,41 @@
     <Grid Padding="10,0,10,10" HorizontalOptions="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="250"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
-        <!--<Label Grid.ColumnSpan="3" Text="NBR ISO 13857 &#10; Estrutura de Proteção" HorizontalTextAlignment="Center" FontSize="Medium"/>-->
-        <Image Source="Corpo" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <Image Source="Corpo" Grid.Row="1" Grid.Column="1"/>
 
-
-        <StackLayout Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="10" HorizontalOptions="Center">
+        <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="10" HorizontalOptions="Center">
             <RadioButton x:Name="riscoAlto" IsChecked="True" Content="Risco Alto" FontSize="Small"/>
             <RadioButton x:Name="riscoBaixo" Content="Risco Baixo" FontSize="Small"/>
         </StackLayout>
 
-        <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
-            <Label Text="Hh (A):" VerticalOptions="Center" FontSize="15"/>
-            <Entry Keyboard="Numeric" ReturnType="Done" x:Name="Hh" MaxLength="4" VerticalOptions="Start" WidthRequest="40" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
-        </StackLayout>
         <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Label Text="Hh (A):" VerticalOptions="Center" FontSize="15"/>
+            <Entry Keyboard="Numeric" x:Name="Hh" MaxLength="4" VerticalOptions="Start" WidthRequest="45" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
             <Label Text="Hps (B):" VerticalOptions="Center" FontSize="15"/>
-            <Entry Keyboard="Numeric" x:Name="Hps" MaxLength="4" VerticalOptions="Start" WidthRequest="40" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
-        </StackLayout>
-        <StackLayout Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+            <Entry Keyboard="Numeric" x:Name="Hps" MaxLength="4" VerticalOptions="Start" WidthRequest="45" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
             <Label Text="Sh (C):" VerticalOptions="Center" FontSize="15"/>
-            <Entry Keyboard="Numeric" x:Name="Sh" MaxLength="4" VerticalOptions="Start" WidthRequest="40" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
+            <Entry Keyboard="Numeric" x:Name="Sh" MaxLength="4" VerticalOptions="Start" WidthRequest="45" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
         </StackLayout>
 
-        <Label x:Name="labelResultado"/>
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" WidthRequest="200" x:Name="btnCalcular" Margin="0,10,0,0" Text="Calcular" Clicked="btnCalcular_Clicked"/>
-
+        <Button Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" WidthRequest="200" x:Name="btnCalcular" Margin="0,10,0,0" Text="Calcular" Clicked="btnCalcular_Clicked"/>
+        
+        <StackLayout Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,0">
+            <Label Text="Resultado:" x:Name="labelTextoResultado" FontAttributes="Bold" TextColor="#03A64A" FontSize="15" IsVisible="false" MinimumWidthRequest="80"/>
+            <Label x:Name="labelResultado" FontSize="15" Margin="0,0,40,0"/>
+        </StackLayout>
+        
     </Grid>
 
 </ContentPage>
