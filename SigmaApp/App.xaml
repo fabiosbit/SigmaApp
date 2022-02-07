@@ -12,6 +12,7 @@
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
             <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=White}"/>
             <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="HeightRequest" Value="100"/>
         </Style>
     </Application.Resources>
 </Application>

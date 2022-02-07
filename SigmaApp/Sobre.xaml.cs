@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.OpenWhatsApp;
+using Xamarin.Essentials;
 
 namespace SigmaApp
 {
@@ -16,5 +13,22 @@ namespace SigmaApp
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void btnWhats(object sender, EventArgs e)
+        {
+            try
+            {
+                Chat.Open("+5549988324940");
+            }
+            catch (Exception msg)
+            {
+                DisplayAlert("Erro", msg.Message, "ok");
+            }
+        }
+
+        private async void btnWWW(object sender, EventArgs e)
+        {
+            await Browser.OpenAsync(new Uri("http://www.sigmacco.com.br/"));
+        }
+    }
 }

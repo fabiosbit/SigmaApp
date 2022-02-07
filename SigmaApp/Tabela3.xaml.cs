@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,10 +13,12 @@ namespace SigmaApp
             InitializeComponent();
         }
 
-        private void btnCalcular_Clicked(object sender, EventArgs e)
+
+        public void btnCalcular_Clicked(object sender, EventArgs e)
         {
             //var consulta = new ConsultaTabelas();
             //consulta.TabBaixoRisco(4, 5, 6);
+
 
             int hh = -1, hps = -1, sh = -1, a = -1, b = -1, c = -1;
             bool tudoOk = true;
@@ -88,6 +87,8 @@ namespace SigmaApp
                 //TABELA1 BAIXO RISCO NBR 13857//
                 if (riscoBaixo.IsChecked == true)
                 {
+                    imageTabela.Source = "Tabela2_BR";
+
                     //Definindo Hh (antigo A)
                     if (hh >= 2500)
                     {
@@ -786,33 +787,40 @@ namespace SigmaApp
                         {
                             if (hps < 1000)
                             {
-                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelResultado.Text = "0";
+                                labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = true;
                             }
                             else
                             {
-                                labelResultado.Text = "Sh(c) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoSh[a, b]) + "mm";
+                                labelResultado.Text = "Sh(c) = " + Convert.ToString(tabelaRiscoBaixoSh[a, b]) + "mm";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = false;
                             }
                         }
 
                         if (hps == -1)
                         {
-                            labelResultado.Text = "Hps(b) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
+                            labelResultado.Text = "Hps(b) = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
                             labelTextoResultado.IsVisible = true;
+                            labelObs.IsVisible = false;
                         }
 
                         if (hh == -1)
                         {
                             if (hps < 1000)
                             {
-                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelResultado.Text = "0";
+                                labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = true;
                             }
                             else
                             {
-                                labelResultado.Text = "Hh(a) Risco Baixo = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
+                                labelResultado.Text = "Hh(a) = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = false;
                             }
                         }
                     }
@@ -825,6 +833,8 @@ namespace SigmaApp
                 //TABELA2 ALTO RISCO NBR 13857//
                 if (riscoAlto.IsChecked == true)
                 {
+                    imageTabela.Source = "Tabela2_AR";
+
                     //Definindo Hh (antigo A)
                     if (hh >= 2700)
                     {
@@ -1405,7 +1415,7 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[9, 14] = "0";
 
                     tabelaRiscoAltoHh[8, 0] = "0";
-                    tabelaRiscoAltoHh[8, 1] = "Não deve estar entre 2400 e 2600";
+                    tabelaRiscoAltoHh[8, 1] = "Não estar entre 2400 e 2600";
                     tabelaRiscoAltoHh[8, 2] = "0";
                     tabelaRiscoAltoHh[8, 3] = "0";
                     tabelaRiscoAltoHh[8, 4] = "0";
@@ -1422,7 +1432,7 @@ namespace SigmaApp
 
                     tabelaRiscoAltoHh[7, 0] = "0";
                     tabelaRiscoAltoHh[7, 1] = "0";
-                    tabelaRiscoAltoHh[7, 2] = "Não deve estar entre 2200 e 2600";
+                    tabelaRiscoAltoHh[7, 2] = "Não estar entre 2200 e 2600";
                     tabelaRiscoAltoHh[7, 3] = "0";
                     tabelaRiscoAltoHh[7, 4] = "0";
                     tabelaRiscoAltoHh[7, 5] = "0";
@@ -1439,7 +1449,7 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[6, 0] = "0";
                     tabelaRiscoAltoHh[6, 1] = "0";
                     tabelaRiscoAltoHh[6, 2] = "0";
-                    tabelaRiscoAltoHh[6, 3] = "Não deve estar entre 2000 e 2600";
+                    tabelaRiscoAltoHh[6, 3] = "Não estar entre 2000 e 2600";
                     tabelaRiscoAltoHh[6, 4] = "0";
                     tabelaRiscoAltoHh[6, 5] = "0";
                     tabelaRiscoAltoHh[6, 6] = "0";
@@ -1456,8 +1466,8 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[5, 1] = "0";
                     tabelaRiscoAltoHh[5, 2] = "0";
                     tabelaRiscoAltoHh[5, 3] = "0";
-                    tabelaRiscoAltoHh[5, 4] = "Não deve estar entre 1600 e 2600";
-                    tabelaRiscoAltoHh[5, 5] = "Não deve estar entre 1800 e 2400";
+                    tabelaRiscoAltoHh[5, 4] = "Não estar entre 1600 e 2600";
+                    tabelaRiscoAltoHh[5, 5] = "Não estar entre 1800 e 2400";
                     tabelaRiscoAltoHh[5, 6] = "0";
                     tabelaRiscoAltoHh[5, 7] = "0";
                     tabelaRiscoAltoHh[5, 8] = "0";
@@ -1474,8 +1484,8 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[4, 3] = "0";
                     tabelaRiscoAltoHh[4, 4] = "0";
                     tabelaRiscoAltoHh[4, 5] = "2600";
-                    tabelaRiscoAltoHh[4, 6] = "Não deve estar entre 1200 e 2400";
-                    tabelaRiscoAltoHh[4, 7] = "Não deve estar entre 1400 e 2200";
+                    tabelaRiscoAltoHh[4, 6] = "Não estar entre 1200 e 2400";
+                    tabelaRiscoAltoHh[4, 7] = "Não estar entre 1400 e 2200";
                     tabelaRiscoAltoHh[4, 8] = "0";
                     tabelaRiscoAltoHh[4, 9] = "0";
                     tabelaRiscoAltoHh[4, 10] = "0";
@@ -1489,10 +1499,10 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[3, 2] = "0";
                     tabelaRiscoAltoHh[3, 3] = "0";
                     tabelaRiscoAltoHh[3, 4] = "0";
-                    tabelaRiscoAltoHh[3, 5] = "Não deve estar entre 800 e 2600";
-                    tabelaRiscoAltoHh[3, 6] = "Não deve estar entre 800 e 2600";
-                    tabelaRiscoAltoHh[3, 7] = "Não deve estar entre 1000 e 2400";
-                    tabelaRiscoAltoHh[3, 8] = "Não deve estar entre 1200 e 2200";
+                    tabelaRiscoAltoHh[3, 5] = "Não estar entre 800 e 2600";
+                    tabelaRiscoAltoHh[3, 6] = "Não estar entre 800 e 2600";
+                    tabelaRiscoAltoHh[3, 7] = "Não estar entre 1000 e 2400";
+                    tabelaRiscoAltoHh[3, 8] = "Não estar entre 1200 e 2200";
                     tabelaRiscoAltoHh[3, 9] = "0";
                     tabelaRiscoAltoHh[3, 10] = "0";
                     tabelaRiscoAltoHh[3, 11] = "0";
@@ -1508,9 +1518,9 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[2, 5] = "400";
                     tabelaRiscoAltoHh[2, 6] = "2600";
                     tabelaRiscoAltoHh[2, 7] = "600";
-                    tabelaRiscoAltoHh[2, 8] = "Não deve estar entre 800 e 2400";
-                    tabelaRiscoAltoHh[2, 9] = "Não deve estar entre 1000 e 2200";
-                    tabelaRiscoAltoHh[2, 10] = "Não deve estar entre 1200 e 2000";
+                    tabelaRiscoAltoHh[2, 8] = "Não estar entre 800 e 2400";
+                    tabelaRiscoAltoHh[2, 9] = "Não estar entre 1000 e 2200";
+                    tabelaRiscoAltoHh[2, 10] = "Não estar entre 1200 e 2000";
                     tabelaRiscoAltoHh[2, 11] = "0";
                     tabelaRiscoAltoHh[2, 12] = "0";
                     tabelaRiscoAltoHh[2, 13] = "0";
@@ -1527,9 +1537,9 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[1, 8] = "200";
                     tabelaRiscoAltoHh[1, 9] = "2400";
                     tabelaRiscoAltoHh[1, 10] = "2400";
-                    tabelaRiscoAltoHh[1, 11] = "Não deve estar entre 400 e 2200";
-                    tabelaRiscoAltoHh[1, 12] = "Não deve estar entre 600 e 2000";
-                    tabelaRiscoAltoHh[1, 13] = "Não deve estar entre 1000 e 1800";
+                    tabelaRiscoAltoHh[1, 11] = "Não estar entre 400 e 2200";
+                    tabelaRiscoAltoHh[1, 12] = "Não estar entre 600 e 2000";
+                    tabelaRiscoAltoHh[1, 13] = "Não estar entre 1000 e 1800";
                     tabelaRiscoAltoHh[1, 14] = "0";
 
                     tabelaRiscoAltoHh[0, 0] = "0";
@@ -1542,7 +1552,7 @@ namespace SigmaApp
                     tabelaRiscoAltoHh[0, 7] = "0";
                     tabelaRiscoAltoHh[0, 8] = "2600";
                     tabelaRiscoAltoHh[0, 9] = "2600";
-                    tabelaRiscoAltoHh[0, 10] = "Não deve estar entre 0 e 2400";
+                    tabelaRiscoAltoHh[0, 10] = "Não estar entre 0 e 2400";
                     tabelaRiscoAltoHh[0, 11] = "200";
                     tabelaRiscoAltoHh[0, 12] = "2400";
                     tabelaRiscoAltoHh[0, 13] = "Não estar entre 400/600 e 2000";
@@ -1554,36 +1564,48 @@ namespace SigmaApp
                         {
                             if (hps < 1000)
                             {
-                                labelResultado.Text = "Estruturas de proteção (hps) menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelResultado.Text = "0";
+                                labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = true;
                             }
                             else
                             {
-                                labelResultado.Text = "Sh(c) Risco Alto = " + Convert.ToString(tabelaRiscoAltoSh[a, b]) +
-                                    Environment.NewLine +
-                                    Environment.NewLine +
-                                    "* Não convém que as estruturas de proteção menores que 1400mm sejam aplicadas sem medidas de proteção adicionais.";
+                                labelResultado.Text = "Sh(c) = " + Convert.ToString(tabelaRiscoAltoSh[a, b]);
+                                labelObs.IsVisible = false;
+
+                                if (tabelaRiscoAltoSh[a, b] < 1400)
+                                {
+                                    labelObs.Text = "* Não convém que as estruturas de proteção menores que 1400mm sejam aplicadas sem medidas de proteção adicionais.";
+                                    labelObs.IsVisible = true;
+                                }
+
                                 labelTextoResultado.IsVisible = true;
                             }
                         }
 
                         if (hps == -1)
                         {
-                            labelResultado.Text = "Hps(b) Risco Alto = " + tabelaRiscoAltoHps[a, c] + "mm";
+                            labelResultado.Text = "Hps(b) = " + tabelaRiscoAltoHps[a, c] + "mm";
                             labelTextoResultado.IsVisible = true;
+                            labelObs.IsVisible = false;
+
                         }
 
                         if (hh == -1)
                         {
                             if (hps < 1000)
                             {
-                                labelResultado.Text = "Estruturas de proteção menores que 1000mm não restringem suficientemente o movimento do corpo";
+                                labelResultado.Text = "0";
+                                labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = true;
                             }
                             else
                             {
-                                labelResultado.Text = "Hh(a) Risco Alto = " + tabelaRiscoAltoHh[b, c] + "mm";
+                                labelResultado.Text = "Hh(a) = " + tabelaRiscoAltoHh[b, c] + "mm";
                                 labelTextoResultado.IsVisible = true;
+                                labelObs.IsVisible = false;
                             }
                         }
                     }
@@ -1596,10 +1618,9 @@ namespace SigmaApp
                 }
             }
 
-            hh = -1;
-            hps = -1;
-            sh = -1;
+            
         }
+
 
         //Verifica se o caracter digitado é um número e o apaga caso não seja.
         private void TextChanged(object sender, TextChangedEventArgs args)

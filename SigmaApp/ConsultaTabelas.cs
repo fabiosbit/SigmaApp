@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SigmaApp
+﻿namespace SigmaApp
 {
     internal class ConsultaTabelas
     {
