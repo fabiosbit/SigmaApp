@@ -8,20 +8,26 @@ namespace SigmaApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tabela3 : ContentPage
     {
+        //bool retrato;
+
         public Tabela3()
         {
             InitializeComponent();
         }
-
 
         public void btnCalcular_Clicked(object sender, EventArgs e)
         {
             //var consulta = new ConsultaTabelas();
             //consulta.TabBaixoRisco(4, 5, 6);
 
-
             int hh = -1, hps = -1, sh = -1, a = -1, b = -1, c = -1;
             bool tudoOk = true;
+            double altura, largura;
+
+
+
+            //DisplayAlert("Imagem", "Altura: " + altura + " Largura: " + largura, "ok");
+            //DisplayAlert("Régua", "Régua X: " + regua.TranslationX + " Régua Y: " + regua.TranslationY, "ok");
 
             try
             {
@@ -88,101 +94,126 @@ namespace SigmaApp
                 if (riscoBaixo.IsChecked == true)
                 {
                     imageTabela.Source = "Tabela2_BR";
+                    altura = imageTabela.Height / 17;
+                    largura = imageTabela.Width / 10;
 
                     //Definindo Hh (antigo A)
                     if (hh >= 2500)
                     {
                         a = 0;
+                        regua.TranslationY = altura * 3.5;
                     }
                     if (hh >= 2400 && hh < 2500)
                     {
                         a = 1;
+                        regua.TranslationY = altura * 4.5;
                     }
                     if (hh >= 2200 && hh < 2400)
                     {
                         a = 2;
+                        regua.TranslationY = altura * 5.5;
                     }
                     if (hh >= 2000 && hh < 2200)
                     {
                         a = 3;
+                        regua.TranslationY = altura * 6.5;
                     }
                     if (hh >= 1800 && hh < 2000)
                     {
                         a = 4;
+                        regua.TranslationY = altura * 7.4;
                     }
                     if (hh >= 1600 && hh < 1800)
                     {
                         a = 5;
+                        regua.TranslationY = altura * 8.3;
                     }
                     if (hh >= 1400 && hh < 1600)
                     {
                         a = 6;
+                        regua.TranslationY = altura * 9.3;
                     }
                     if (hh >= 1200 && hh < 1400)
                     {
                         a = 7;
+                        regua.TranslationY = altura * 10.3;
                     }
                     if (hh >= 1000 && hh < 1200)
                     {
                         a = 8;
+                        regua.TranslationY = altura * 11.3;
                     }
                     if (hh >= 800 && hh < 1000)
                     {
                         a = 9;
+                        regua.TranslationY = altura * 12.3;
                     }
                     if (hh >= 600 && hh < 800)
                     {
                         a = 10;
+                        regua.TranslationY = altura * 13.3;
                     }
                     if (hh >= 400 && hh < 600)
                     {
                         a = 11;
+                        regua.TranslationY = altura * 14.3;
                     }
                     if (hh >= 200 && hh < 400)
                     {
                         a = 12;
+                        regua.TranslationY = altura * 15.3;
                     }
                     if (hh >= 0 && hh < 200)
                     {
                         a = 13;
+                        regua.TranslationY = altura * 16.3;
                     }
 
                     //Definindo Hps (antigo B):
                     if (hps >= 1000 && hps < 1200)
                     {
                         b = 0;
+                        regua.TranslationX = largura * 1.6;
                     }
                     if (hps >= 1200 && hps < 1400)
                     {
                         b = 1;
+                        regua.TranslationX = largura * 2.6;
                     }
                     if (hps >= 1400 && hps < 1600)
                     {
                         b = 2;
+                        regua.TranslationX = largura * 3.6;
                     }
                     if (hps >= 1600 && hps < 1800)
                     {
                         b = 3;
+                        regua.TranslationX = largura * 4.6;
                     }
                     if (hps >= 1800 && hps < 2000)
                     {
                         b = 4;
+                        regua.TranslationX = largura * 5.5;
                     }
                     if (hps >= 2000 && hps < 2200)
                     {
                         b = 5;
+                        regua.TranslationX = largura * 6.4;
                     }
                     if (hps >= 2200 && hps < 2400)
                     {
                         b = 6;
+                        regua.TranslationX = largura * 7.4;
                     }
                     if (hps >= 2400 && hps < 2500)
                     {
                         b = 7;
+                        regua.TranslationX = largura * 8.4;
                     }
                     if (hps >= 2500)
                     {
                         b = 8;
+                        regua.TranslationX = largura * 9.5;
                     }
 
                     //Definindo Sh (antigo C)
@@ -791,6 +822,8 @@ namespace SigmaApp
                                 labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = true;
+                                regua.TranslationX = largura / 2;
+                                regua.TranslationY = altura / 2;
                             }
                             else
                             {
@@ -805,6 +838,7 @@ namespace SigmaApp
                             labelResultado.Text = "Hps(b) = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
+                            regua.TranslationX = largura * 20;
                         }
 
                         if (hh == -1)
@@ -815,12 +849,15 @@ namespace SigmaApp
                                 labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = true;
+                                regua.TranslationX = largura / 2;
+                                regua.TranslationY = altura / 2;
                             }
                             else
                             {
                                 labelResultado.Text = "Hh(a) = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
+                                regua.TranslationY = altura * 20;
                             }
                         }
                     }
@@ -834,109 +871,136 @@ namespace SigmaApp
                 if (riscoAlto.IsChecked == true)
                 {
                     imageTabela.Source = "Tabela2_AR";
+                    altura = imageTabela.Height / 18;
+                    largura = imageTabela.Width / 11;
 
                     //Definindo Hh (antigo A)
                     if (hh >= 2700)
                     {
                         a = 0;
+                        regua.TranslationY = altura * 3.5;
                     }
                     if (hh >= 2600 && hh < 2700)
                     {
                         a = 1;
+                        regua.TranslationY = altura * 4.5;
                     }
                     if (hh >= 2400 && hh < 2600)
                     {
                         a = 2;
+                        regua.TranslationY = altura * 5.5;
                     }
                     if (hh >= 2200 && hh < 2400)
                     {
                         a = 3;
+                        regua.TranslationY = altura * 6.4;
                     }
                     if (hh >= 2000 && hh < 2200)
                     {
                         a = 4;
+                        regua.TranslationY = altura * 7.4;
                     }
                     if (hh >= 1800 && hh < 2000)
                     {
                         a = 5;
+                        regua.TranslationY = altura * 8.4;
                     }
                     if (hh >= 1600 && hh < 1800)
                     {
                         a = 6;
+                        regua.TranslationY = altura * 9.3;
                     }
                     if (hh >= 1400 && hh < 1600)
                     {
                         a = 7;
+                        regua.TranslationY = altura * 10.3;
                     }
                     if (hh >= 1200 && hh < 1400)
                     {
                         a = 8;
+                        regua.TranslationY = altura * 11.3;
                     }
                     if (hh >= 1000 && hh < 1200)
                     {
                         a = 9;
+                        regua.TranslationY = altura * 12.3;
                     }
                     if (hh >= 800 && hh < 1000)
                     {
                         a = 10;
+                        regua.TranslationY = altura * 13.3;
                     }
                     if (hh >= 600 && hh < 800)
                     {
                         a = 11;
+                        regua.TranslationY = altura * 14.3;
                     }
                     if (hh >= 400 && hh < 600)
                     {
                         a = 12;
+                        regua.TranslationY = altura * 15.3;
                     }
                     if (hh >= 200 && hh < 400)
                     {
                         a = 13;
+                        regua.TranslationY = altura * 16.3;
                     }
                     if (hh >= 0 && hh < 200)
                     {
                         a = 14;
+                        regua.TranslationY = altura * 17.2;
                     }
 
                     //Definindo Hps (antigo B):
                     if (hps >= 1000 && hps < 1200)
                     {
                         b = 0;
+                        regua.TranslationX = largura * 1.6;
                     }
                     if (hps >= 1200 && hps < 1400)
                     {
                         b = 1;
+                        regua.TranslationX = largura * 2.6;
                     }
                     if (hps >= 1400 && hps < 1600)
                     {
                         b = 2;
+                        regua.TranslationX = largura * 3.6;
                     }
                     if (hps >= 1600 && hps < 1800)
                     {
                         b = 3;
+                        regua.TranslationX = largura * 4.6;
                     }
                     if (hps >= 1800 && hps < 2000)
                     {
                         b = 4;
+                        regua.TranslationX = largura * 5.6;
                     }
                     if (hps >= 2000 && hps < 2200)
                     {
                         b = 5;
+                        regua.TranslationX = largura * 6.5;
                     }
                     if (hps >= 2200 && hps < 2400)
                     {
                         b = 6;
+                        regua.TranslationX = largura * 7.5;
                     }
                     if (hps >= 2400 && hps < 2500)
                     {
                         b = 7;
+                        regua.TranslationX = largura * 8.4;
                     }
                     if (hps >= 2500 && hps < 2700)
                     {
                         b = 8;
+                        regua.TranslationX = largura * 9.4;
                     }
                     if (hps >= 2700)
                     {
                         b = 9;
+                        regua.TranslationX = largura * 10.5;
                     }
 
                     //Definindo Sh (antigo C)
@@ -1568,6 +1632,8 @@ namespace SigmaApp
                                 labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = true;
+                                regua.TranslationX = largura / 2;
+                                regua.TranslationY = altura / 2;
                             }
                             else
                             {
@@ -1583,12 +1649,12 @@ namespace SigmaApp
                                 labelTextoResultado.IsVisible = true;
                             }
                         }
-
                         if (hps == -1)
                         {
                             labelResultado.Text = "Hps(b) = " + tabelaRiscoAltoHps[a, c] + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
+                            regua.TranslationX = largura * 20;
 
                         }
 
@@ -1606,6 +1672,7 @@ namespace SigmaApp
                                 labelResultado.Text = "Hh(a) = " + tabelaRiscoAltoHh[b, c] + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
+                                regua.TranslationY = altura * 20;
                             }
                         }
                     }
@@ -1618,7 +1685,7 @@ namespace SigmaApp
                 }
             }
 
-            
+
         }
 
 
@@ -1632,5 +1699,26 @@ namespace SigmaApp
                 ((Entry)sender).Text = numeroOk ? args.NewTextValue : args.NewTextValue.Remove(args.NewTextValue.Length - 1);
             }
         }
+
+
+        //protected override void OnSizeAllocated(double width, double height)
+        //{
+        //    base.OnSizeAllocated(width, height);
+
+        //    if (width > height)
+        //    {
+        //        retrato = false;
+        //        panContainer.Margin = new Thickness(100, 0, 100, 0);
+        //        imageTabela.Margin = new Thickness(100, 0, 100, 0);
+        //        DisplayAlert("Imagem", "Paisagem", "ok");
+        //    }
+        //    else
+        //    {
+        //        retrato = true;
+        //        panContainer.Margin = new Thickness(10, 0, 10, 0);
+        //        imageTabela.Margin = new Thickness(10, 0, 10, 0);
+        //        DisplayAlert("Imagem", "Retrato", "ok");
+        //    }
+        //}
     }
 }

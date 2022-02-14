@@ -11,10 +11,10 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-        <local:PinchPanContainer >
-            <local:PinchPanContainer.Content>
-                <Image Source="Tab4" VerticalOptions="Start" HeightRequest="400" Margin="10,0,10,0"/>
-            </local:PinchPanContainer.Content>
-        </local:PinchPanContainer>
+    <local:PinchPanContainer >
+        <local:PinchPanContainer.Content>
+            <Image Source="Tab4" VerticalOptions="Start" HeightRequest="400" Margin="10,0,10,0"/>
+        </local:PinchPanContainer.Content>
+    </local:PinchPanContainer>
 
 </ContentPage>

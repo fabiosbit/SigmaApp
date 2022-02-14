@@ -18,6 +18,8 @@ namespace SigmaApp
             switch (e.StatusType)
             {
                 case GestureStatus.Started:
+                    x = Content.TranslationX;
+                    y = Content.TranslationY;
 
                     break;
                 case GestureStatus.Running:
