@@ -8,8 +8,6 @@ namespace SigmaApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tabela3 : ContentPage
     {
-        //bool retrato;
-
         public Tabela3()
         {
             InitializeComponent();
@@ -23,8 +21,6 @@ namespace SigmaApp
             int hh = -1, hps = -1, sh = -1, a = -1, b = -1, c = -1;
             bool tudoOk = true;
             double altura, largura;
-
-
 
             //DisplayAlert("Imagem", "Altura: " + altura + " Largura: " + largura, "ok");
             //DisplayAlert("Régua", "Régua X: " + regua.TranslationX + " Régua Y: " + regua.TranslationY, "ok");
@@ -838,7 +834,7 @@ namespace SigmaApp
                             labelResultado.Text = "Hps(b) = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
-                            regua.TranslationX = largura * 20;
+                            regua.TranslationX = largura * 30;
                         }
 
                         if (hh == -1)
@@ -857,7 +853,7 @@ namespace SigmaApp
                                 labelResultado.Text = "Hh(a) = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
-                                regua.TranslationY = altura * 20;
+                                regua.TranslationY = altura * 30;
                             }
                         }
                     }
@@ -1654,7 +1650,7 @@ namespace SigmaApp
                             labelResultado.Text = "Hps(b) = " + tabelaRiscoAltoHps[a, c] + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
-                            regua.TranslationX = largura * 20;
+                            regua.TranslationX = largura * 30;
 
                         }
 
@@ -1672,7 +1668,7 @@ namespace SigmaApp
                                 labelResultado.Text = "Hh(a) = " + tabelaRiscoAltoHh[b, c] + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
-                                regua.TranslationY = altura * 20;
+                                regua.TranslationY = altura * 30;
                             }
                         }
                     }
@@ -1684,10 +1680,7 @@ namespace SigmaApp
 
                 }
             }
-
-
         }
-
 
         //Verifica se o caracter digitado é um número e o apaga caso não seja.
         private void TextChanged(object sender, TextChangedEventArgs args)
@@ -1700,25 +1693,15 @@ namespace SigmaApp
             }
         }
 
+        //Posiciona o segundo jogo de segmentos de régua, para quando o primeiro sair da tela.
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
 
-        //protected override void OnSizeAllocated(double width, double height)
-        //{
-        //    base.OnSizeAllocated(width, height);
-
-        //    if (width > height)
-        //    {
-        //        retrato = false;
-        //        panContainer.Margin = new Thickness(100, 0, 100, 0);
-        //        imageTabela.Margin = new Thickness(100, 0, 100, 0);
-        //        DisplayAlert("Imagem", "Paisagem", "ok");
-        //    }
-        //    else
-        //    {
-        //        retrato = true;
-        //        panContainer.Margin = new Thickness(10, 0, 10, 0);
-        //        imageTabela.Margin = new Thickness(10, 0, 10, 0);
-        //        DisplayAlert("Imagem", "Retrato", "ok");
-        //    }
-        //}
+            regua.Children[0].TranslationY = imageTabela.Height;
+            regua.Children[1].TranslationY = -imageTabela.Height;
+            regua.Children[4].TranslationX = imageTabela.Width;
+            regua.Children[5].TranslationX = -imageTabela.Width;
+        }
     }
 }
