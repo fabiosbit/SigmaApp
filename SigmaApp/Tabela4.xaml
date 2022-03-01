@@ -14,14 +14,14 @@
     <ScrollView>
         <Grid HorizontalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="0"/>
                 <RowDefinition Height="340"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="320"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
@@ -53,7 +53,8 @@
                 <Label x:Name="labelResultado" Text="" FontSize="15" Margin="0,0,40,0"/>
             </StackLayout>
 
-            <Label Text="* Consulte um profissional de segurança antes de realizar o serviço." FontSize="Micro" Grid.Column="1" Grid.Row="7"/>
+            <Label x:Name="labelObs" Text="" IsVisible="false" FontSize="14" Grid.Column="1" Grid.Row="7" Margin="0,0,0,0"/>
+            <Label Text="* Consulte um profissional de segurança antes de realizar o serviço." FontSize="Micro" Grid.Column="1" Grid.Row="7" Margin="0,30,0,0"/>
 
         </Grid>
     </ScrollView>

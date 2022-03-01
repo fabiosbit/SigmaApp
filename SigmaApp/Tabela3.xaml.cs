@@ -1662,6 +1662,8 @@ namespace SigmaApp
                                 labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = true;
+                                regua.TranslationX = largura / 2;
+                                regua.TranslationY = altura / 2;
                             }
                             else
                             {

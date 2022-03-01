@@ -49,22 +49,28 @@ namespace SigmaApp
                         }
 
                         s = (2000 * t) + c;
+                        labelObs.IsVisible = false;
 
                         //S não pode ser menor que 100mm usando K=2000 eq3
                         if (s < 100)
                         {
                             s = 100;
+                            labelObs.Text = "* A distância não pode ser menor que 100mm.";
+                            labelObs.IsVisible = true;
                         }
 
                         //Primeira particularidade da norma (6.2.3.1)
                         if (s >= 500)
                         {
                             s = (1600 * t) + c;
+                            labelObs.IsVisible = false;
 
                             //S não pode se menor que 500mm usando K=1600 eq4
                             if (s < 500)
                             {
                                 s = 500;
+                                labelObs.Text = "* A distância não pode ser menor que 500mm.";
+                                labelObs.IsVisible = true;
                             }
                         }
                     }
@@ -74,6 +80,7 @@ namespace SigmaApp
                     if (d > 40)
                     {
                         s = (1600 * t) + 850;
+                        labelObs.IsVisible = false;
                     }
 
                     //Cálculo para feixe único C = 1200
@@ -82,6 +89,7 @@ namespace SigmaApp
                         s = (1600 * t) + 1200;
                         labelResultado.Text = "Para Feixe Único: " + s + "mm";
                         labelTextoResultado.IsVisible = true;
+                        labelObs.IsVisible = false;
                     }
                     else
                     {
