@@ -172,7 +172,7 @@ namespace SigmaApp
                             }
                             else
                             {
-                                labelResultado.Text = "Sh(c) = " + Tabelas.RiscoAltoSh(x, y);
+                                labelResultado.Text = "Sh(c) = " + Tabelas.RiscoAltoSh(x, y) + "mm";
                                 ExibirCampoResultado();
 
                                 if (Tabelas.RiscoAltoSh(x, y) < 1400)
