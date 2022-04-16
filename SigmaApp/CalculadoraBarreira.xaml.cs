@@ -16,7 +16,7 @@ namespace SigmaApp
         //Recebe as dimenções das tabelas.png
         double altura, largura;
 
-        public void btnCalcular_Clicked(object sender, EventArgs e)
+        public void Calcular_Clicked(object sender, EventArgs e)
         {
             int hh = -1, hps = -1, sh = -1, x = -1, y = -1, z = -1;
             bool tudoOk = true;
